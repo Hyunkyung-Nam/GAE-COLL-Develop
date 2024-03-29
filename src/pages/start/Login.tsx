@@ -1,8 +1,10 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../style/common.scss";
 import "../../style/login.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+    const navigate = useNavigate();
     const [inputId, setInputId] = useState("");
     const handleInputText = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputId(e.target.value);
@@ -19,6 +21,7 @@ export default function Login() {
     };
     const handleLogin = () => {
         console.log("hi");
+        navigate("/email/signup");
         return;
     };
     return (

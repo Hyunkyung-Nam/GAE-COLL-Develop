@@ -1,9 +1,12 @@
 @import "./theme.scss";
+* {
+    background-color: $main-color;
+}
 
 main {
     @include flex-column(center, center);
     height: 100vh;
-    background-color: $main-color;
+    overflow-y: hidden;
 }
 .email-login {
     width: 100%;
@@ -42,6 +45,7 @@ main {
         font-weight: bold;
         margin-bottom: 50px;
         font-size: 30px;
+        text-align: center;
     }
     label {
         font-weight: bold;

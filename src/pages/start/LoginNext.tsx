@@ -1,6 +1,7 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../style/common.scss";
 import "../../style/login.scss";
+import { Link } from "react-router-dom";
 
 export default function LoginNext() {
     const [inputId, setInputId] = useState("");
@@ -46,7 +47,9 @@ export default function LoginNext() {
                     />
                     <br />
                     <button onClick={handleLogin}>로그인</button>
-                    <span className="find-pw">비밀번호를 잊으셨나요?</span>
+                    <Link to="/email/findPw">
+                        <span className="find-pw">비밀번호를 잊으셨나요?</span>
+                    </Link>
                 </div>
             </div>
         </main>

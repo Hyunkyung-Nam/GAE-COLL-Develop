@@ -1,0 +1,25 @@
+@import "./theme.scss";
+.labelNInputBoxSpan {
+    @include flex-row(space-between, center);
+    width: 68%;
+    margin: 5px 0;
+}
+.labelNInputBoxSpan label {
+    font-size: 13px;
+    width: 25%;
+    margin: 0;
+}
+.labelNInputBoxSpan input {
+    width: 70%;
+    padding: 10px;
+    font-size: 12px;
+}
+.labelNInputBoxDiv button {
+    white-space: nowrap;
+    padding: 10px;
+    width: 30%;
+}
+.labelNInputBoxDiv {
+    @include flex-row(space-between, center);
+    margin: 5px 0;
+}
