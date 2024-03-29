@@ -2,7 +2,14 @@ import React from "react";
 import styled from "../../style/labelNInput.module.scss";
 
 export default function LabelNInput(props: any) {
-    const { key, label, inputId, inputValue, inputType, inputPlacehoder, register, rule, errors, click } = props;
+    const { label, inputId, inputValue, inputType, inputPlacehoder, register, rule, errors, click } = props;
+    const makeButtonFunc = (buttonValue: string, click: any): JSX.Element => {
+        return (
+            <button type="button" onClick={click}>
+                {buttonValue}
+            </button>
+        );
+    };
     return (
         <>
             <div className={styled.labelNInputBoxDiv}>
@@ -16,21 +23,9 @@ export default function LabelNInput(props: any) {
                         {...register(inputId, rule)}
                     />
                 </span>
-                {inputId === "userEmail" && (
-                    <button type="button" onClick={click}>
-                        중복 확인
-                    </button>
-                )}
-                {inputId === "userTel" && (
-                    <button type="button" onClick={click}>
-                        인증번호 전송
-                    </button>
-                )}
-                {inputId === "userAuthNumber" && (
-                    <button type="button" onClick={click}>
-                        인증번호 확인
-                    </button>
-                )}
+                {inputId === "userEmail" && makeButtonFunc("중복확인", click)}
+                {inputId === "userTel" && makeButtonFunc("인증번호 전송", click)}
+                {inputId === "userAuthNumber" && makeButtonFunc("인증번호 확인", click)}
             </div>
             {errors[inputId]?.message ? (
                 <span style={{ color: "red", fontSize: "12px" }}>{errors[inputId]?.message}</span>

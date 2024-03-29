@@ -13,7 +13,19 @@ interface FormValues {
     userTel: string;
     userAuthNumber: string;
 }
-
+interface InputDataSetting {
+    label: string;
+    inputId: string;
+    inputValue: string;
+    inputPlacehoder: string;
+    inputType: string;
+    rule: {
+        required: string;
+        pattern?: { value: RegExp; message: string };
+    };
+    click?: () => void;
+}
+const REGEXP = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
 export default function Signup() {
     const {
         register,
@@ -21,11 +33,11 @@ export default function Signup() {
         watch,
         formState: { errors },
         setError,
-    } = useForm<FormValues>();
+    } = useForm<FormValues>({ mode: "onChange" });
     const watchUserEmail = watch("userEmail");
     const watchUserTel = watch("userTel");
     const watchUserAuthNumber = watch("userAuthNumber");
-    const labelNInputData = [
+    const labelNInputData: InputDataSetting[] = [
         {
             label: "이름",
             inputId: "userName",
@@ -50,13 +62,8 @@ export default function Signup() {
                     message: "이메일 형식에 맞지 않습니다.",
                 },
             },
-            click: function () {
+            click: function (): void {
                 console.log("이메일 중복체크");
-                if (watchUserEmail === "") {
-                    setError("userEmail", { message: "휴대폰번호를 입력하세요" });
-                } else {
-                    setError("userEmail", { message: "" });
-                }
             },
         },
         {
@@ -88,13 +95,8 @@ export default function Signup() {
             rule: {
                 required: "휴대폰번호를 입력하세요",
             },
-            click: function () {
+            click: function (): void {
                 console.log("인증번호 전송");
-                if (watchUserTel === "") {
-                    setError("userTel", { message: "휴대폰번호를 입력하세요" });
-                } else {
-                    setError("userTel", { message: "" });
-                }
             },
         },
         {
@@ -106,13 +108,8 @@ export default function Signup() {
             rule: {
                 required: "인증번호를 입력하세요",
             },
-            click: function () {
+            click: function (): void {
                 console.log("인증번호 확인");
-                if (watchUserAuthNumber === "") {
-                    setError("userAuthNumber", { message: "인증번호를 입력하세요" });
-                } else {
-                    setError("userAuthNumber", { message: "" });
-                }
             },
         },
     ];
