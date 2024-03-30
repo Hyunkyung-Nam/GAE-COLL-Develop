@@ -1,0 +1,11 @@
+@import "./theme.scss";
+.contentBox {
+    background-color: white;
+    border-radius: 20px;
+    height: 150px;
+    @include flex-row(center, start);
+}
+
+.minHeight {
+    height: 200px;
+}

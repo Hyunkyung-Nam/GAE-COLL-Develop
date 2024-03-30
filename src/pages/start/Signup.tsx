@@ -3,7 +3,7 @@ import LabelNInput from "../../components/common/LabelNInput";
 import { Form } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import "../../style/signup.scss";
+import "../../style/signup.module.scss";
 
 interface FormValues {
     userName: string;

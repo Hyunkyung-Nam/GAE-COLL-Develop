@@ -7,6 +7,7 @@ $gray-color: #8e8e8e;
 
 @mixin mobile {
     @media (max-width: $mobile-max) {
+        min-width: 335px;
         @content;
     }
 }

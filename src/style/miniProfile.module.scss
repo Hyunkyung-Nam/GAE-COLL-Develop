@@ -1,0 +1,28 @@
+@import "./theme.scss";
+
+.miniProfileBox {
+    @include flex-row(start, center);
+    width: 100%;
+    background-color: unset;
+    overflow: hidden;
+    padding: 5px 10px;
+    * {
+        background-color: unset;
+    }
+}
+.miniProfileImg {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.miniProfileContent {
+    width: 70%;
+
+    > div {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include flex-column(center, left);
+        text-align: left;
+    }
+}

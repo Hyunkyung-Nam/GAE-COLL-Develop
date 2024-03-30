@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import "../../style/common.scss";
-import "../../style/login.scss";
+import "../../style/login.module.scss";
 
 export default function FindPw() {
     const [inputId, setInputId] = useState("");

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../../style/common.scss";
-import "../../style/login.scss";
+import "../../style/login.module.scss";
 import { Link } from "react-router-dom";
 
 export default function LoginNext() {
