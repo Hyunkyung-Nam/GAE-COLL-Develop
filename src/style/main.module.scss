@@ -1,0 +1,28 @@
+@import "./theme.scss";
+.mainTopConetent {
+    @include flex-column(center, center);
+    .topDiv {
+        font-weight: bold;
+        margin-bottom: 5px;
+        .name {
+            font-size: 20px;
+        }
+    }
+    .bottomDiv {
+        @include flex-row(center, center);
+        > div {
+            margin-right: 10px;
+        }
+        img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 50%;
+        }
+    }
+}
+.mainTitle {
+    margin: 15px 0 7px 10px;
+    font-weight: bold;
+}

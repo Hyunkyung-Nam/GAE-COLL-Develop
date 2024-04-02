@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../../style/common.scss";
-import "../../style/login.scss";
+import styles from "../../style/login.module.scss";
 import { Link } from "react-router-dom";
 
 export default function LoginNext() {
@@ -24,34 +24,27 @@ export default function LoginNext() {
         console.log("hi");
     };
     return (
-        <main>
-            <div className="app-title">
-                <span className="app-title-large">개</span>
-                린이
-                <span className="app-title-large">콜</span>라보
-            </div>
-            <div>
-                <div className="email-login">
-                    <div className="main-title">로그인</div>
+        <div>
+            <div className={styles.emailLogin}>
+                <div className={styles.mainTitle}>로그인</div>
 
-                    <label htmlFor="input-email">비밀번호</label>
-                    <input
-                        ref={pwInput}
-                        id="input-email"
-                        type="password"
-                        placeholder="비밀번호를 입력하세요"
-                        value={inputId}
-                        onChange={(e) => handleInputText(e)}
-                        onKeyDown={(e) => handleEnter(e)}
-                        onBlur={handleLogin}
-                    />
-                    <br />
-                    <button onClick={handleLogin}>로그인</button>
-                    <Link to="/email/findPw">
-                        <span className="find-pw">비밀번호를 잊으셨나요?</span>
-                    </Link>
-                </div>
+                <label htmlFor="input-password">비밀번호</label>
+                <input
+                    ref={pwInput}
+                    id="input-password"
+                    type="password"
+                    placeholder="비밀번호를 입력하세요"
+                    value={inputId}
+                    onChange={(e) => handleInputText(e)}
+                    onKeyDown={(e) => handleEnter(e)}
+                    onBlur={handleLogin}
+                />
+                <br />
+                <button onClick={handleLogin}>로그인</button>
+                <Link to="/start/findPw">
+                    <span className={styles.findPw}>비밀번호를 잊으셨나요?</span>
+                </Link>
             </div>
-        </main>
+        </div>
     );
 }

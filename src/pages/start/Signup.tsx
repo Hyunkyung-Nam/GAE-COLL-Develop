@@ -3,7 +3,7 @@ import LabelNInput from "../../components/common/LabelNInput";
 import { Form } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import "../../style/signup.scss";
+import "../../style/signup.module.scss";
 
 interface FormValues {
     userName: string;
@@ -123,36 +123,27 @@ export default function Signup() {
         console.log(errors);
     };
     return (
-        <main>
-            <div className="singup-background">
-                <div className="app-title">
-                    <span className="app-title-large">개</span>
-                    린이
-                    <span className="app-title-large">콜</span>라보
-                </div>
-                <div className="signup-body">
-                    <form onSubmit={handleSubmit(onSubmit, onInvalid)}>
-                        {labelNInputData.map((data, index) => {
-                            return (
-                                <>
-                                    <LabelNInput
-                                        register={register}
-                                        key={index}
-                                        label={data.label}
-                                        inputId={data.inputId}
-                                        inputPlacehoder={data.inputPlacehoder}
-                                        inputType={data.inputType}
-                                        rule={data.rule}
-                                        errors={errors}
-                                        click={data.click || undefined}
-                                    />
-                                </>
-                            );
-                        })}
-                        <button type="submit">제출</button>
-                    </form>
-                </div>
-            </div>
-        </main>
+        <div className="signup-body">
+            <form onSubmit={handleSubmit(onSubmit, onInvalid)}>
+                {labelNInputData.map((data, index) => {
+                    return (
+                        <>
+                            <LabelNInput
+                                register={register}
+                                key={index}
+                                label={data.label}
+                                inputId={data.inputId}
+                                inputPlacehoder={data.inputPlacehoder}
+                                inputType={data.inputType}
+                                rule={data.rule}
+                                errors={errors}
+                                click={data.click || undefined}
+                            />
+                        </>
+                    );
+                })}
+                <button type="submit">제출</button>
+            </form>
+        </div>
     );
 }

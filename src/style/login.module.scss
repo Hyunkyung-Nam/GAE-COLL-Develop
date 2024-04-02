@@ -1,5 +1,5 @@
 @import "./theme.scss";
-* {
+body {
     background-color: $main-color;
 }
 
@@ -8,7 +8,7 @@ main {
     height: 100vh;
     overflow-y: hidden;
 }
-.email-login {
+.emailLogin {
     width: 100%;
     @include flex-column(center, center);
     margin-bottom: 50px;
@@ -18,7 +18,7 @@ main {
     color: $gray-color;
     opacity: 0.8;
 }
-.social-login {
+.socialLogin {
     @include flex-row(space-evenly, center);
 
     div {
@@ -41,7 +41,7 @@ main {
 }
 
 @include mobile {
-    .app-title {
+    .appTitle {
         font-weight: bold;
         margin-bottom: 50px;
         font-size: 30px;
@@ -52,30 +52,30 @@ main {
         font-size: 13px;
         margin-bottom: 10px;
     }
-    .app-title-large {
+    .appTitleLarge {
         font-size: 40px;
     }
-    .email-login > * {
+    .emailLogin > * {
         width: 200px;
     }
-    .find-pw {
+    .findPw {
         margin-top: 10px;
         font-weight: bold;
         color: $gray-color;
         font-size: 13px;
         text-decoration: underline;
     }
-    .main-title {
+    .mainTitle {
         font-size: 20px;
         font-weight: bold;
         text-align: center;
         margin-bottom: 20px;
     }
-    .find-email > :last-child {
+    .findEmail > :last-child {
         margin-top: 10px;
     }
 
-    .find-email {
+    .findEmail {
         button {
             margin-left: 10px;
         }
