@@ -2,8 +2,11 @@
 .contentBox {
     background-color: white;
     border-radius: 20px;
-    height: 150px;
-    @include flex-row(center, start);
+    min-height: 130px;
+    max-height: 180px;
+    padding: 5px 5px;
+    @include flex-row(start, start);
+    overflow: scroll;
 }
 
 .minHeight {
