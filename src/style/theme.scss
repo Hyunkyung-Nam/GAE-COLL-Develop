@@ -7,6 +7,8 @@ $bgGray-color: #c4c4c4;
 $gray-color: #8e8e8e;
 $green-color: #d9e9bf;
 $mobile-img-size: 40px;
+$add-project-member-modal-width: 300px;
+$add-project-member-modal-height: 200px;
 
 @mixin mobile {
     @media (max-width: $mobile-max) {

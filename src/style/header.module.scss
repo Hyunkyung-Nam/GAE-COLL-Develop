@@ -4,29 +4,44 @@ $user-img-size: 30px;
 .header {
     padding: 0 10px;
     position: fixed;
+    width: 100vw;
     width: 100%;
-    width: 100%;
-    @include flex-row(space-between, center);
-    height: 50px;
+    @include flex-column(space-between, center);
+    min-height: 50px;
     background-color: $green-color;
-    > div {
-        text-align: center;
-        height: 100%;
-        line-height: 50px;
-        min-width: calc(100% / 3);
-    }
-    > div:last-child {
+
+    > .headerFirstLine {
         position: relative;
-        img {
-            position: absolute;
-            top: calc((50px - $user-img-size) / 2);
-            right: 0px;
-            width: $user-img-size;
-            height: $user-img-size;
-            border-radius: 50%;
-            border: 0.5px solid;
-            padding: 2px;
-            background-color: white;
+        width: 100%;
+        @include flex-row(space-between, center);
+        > div {
+            width: calc(100% / 3);
+            height: 100%;
+            text-align: center;
+
+            line-height: 50px;
         }
+
+        > .imgBox {
+            @include flex-row(end, center);
+            height: 100%;
+            > img {
+                width: $user-img-size;
+                height: $user-img-size;
+                border-radius: 50%;
+                border: 0.5px solid;
+                padding: 2px;
+                background-color: white;
+            }
+        }
+    }
+
+    .headerSecoundLine {
+        width: 100vw;
+        @include flex-row(center, center);
+        background-color: $green-color;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
     }
 }

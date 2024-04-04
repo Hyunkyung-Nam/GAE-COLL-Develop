@@ -1,7 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import styles from "../../style/login.module.scss";
-import Login from "./Login";
 
 export default function LoginBox() {
     return (

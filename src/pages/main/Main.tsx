@@ -57,7 +57,7 @@ export default function Main() {
         { title: "레이아웃을짜야합니다요", deadline: "2024-02-01", team: "개콜" },
     ];
     return (
-        <div style={{ paddingTop: "60px" }}>
+        <div className={styles.mainContent}>
             <div className={styles.mainTopConetent}>
                 <div className={styles.topDiv}>
                     안녕하세요 <span className={styles.name}>남현경</span>님
