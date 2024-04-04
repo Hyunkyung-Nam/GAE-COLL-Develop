@@ -1,6 +1,11 @@
 @import "./theme.scss";
+.mainContent {
+    position: relative;
+    top: 60px;
+}
 .mainTopConetent {
     @include flex-column(center, center);
+
     .topDiv {
         font-weight: bold;
         margin-bottom: 5px;

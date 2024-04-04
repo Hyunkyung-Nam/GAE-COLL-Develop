@@ -9,6 +9,7 @@ import LoginBox from "./pages/start/LoginBox";
 
 import "./App.css";
 import Header from "./components/common/Header";
+import CreateProject from "./pages/main/CreateProject";
 
 function App() {
     return (
@@ -25,12 +26,22 @@ function App() {
                                 </>
                             }
                         />
+
                         <Route path="/start" element={<LoginBox />}>
                             <Route index element={<Login />} />
                             <Route path="signup" element={<Signup />} />
                             <Route path="login" element={<LoginNext />} />
                             <Route path="findPW" element={<FindPw />} />
                         </Route>
+                        <Route
+                            path="/createProject"
+                            element={
+                                <>
+                                    {" "}
+                                    <Header title="프로젝트생성" /> <CreateProject />{" "}
+                                </>
+                            }
+                        />
                     </Route>
                 </Routes>
             </BrowserRouter>

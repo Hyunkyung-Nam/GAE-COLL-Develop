@@ -1,3 +1,9 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+.nanumgothiccoding * {
+    font-family: "Nanum Gothic Coding", monospace;
+}
 .App {
     min-width: 320px;
+    font-family: "Nanum Gothic Coding", monospace;
 }

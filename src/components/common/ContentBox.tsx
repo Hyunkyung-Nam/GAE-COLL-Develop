@@ -4,15 +4,18 @@ import MiniProfile from "./MiniProfile";
 import BaordContentTable from "../board/BaordContentTable";
 import TableContent from "./TableContent";
 import AddProject from "./AddProject";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ContentBox(props: any) {
+    const navigate = useNavigate();
+    const go = (data: string) => {
+        navigate(data);
+    };
     return (
         <>
-            {/* 데이터가 한개도없을때 보여주는거랑 +할 데이터 넣는거.. ㅎ 정말 힘들다.. ㅠ */}
             {props.projectData && (
                 <div className={styles.contentBox}>
-                    <AddProject />
+                    <AddProject data="프로젝트 생성" onClick={() => navigate("/createProject")} />
 
                     {props.projectData.map((value: any) => {
                         return <MiniProfile key={value.title} data={value} />;
