@@ -10,8 +10,17 @@ import LoginBox from "./pages/start/LoginBox";
 import "./App.css";
 import Header from "./components/common/Header";
 import CreateProject from "./pages/main/CreateProject";
+import BoardMainBox from "./pages/project/BoardMainBox";
 
 function App() {
+    const project = {
+        imgSrc: "./img/google-login.png",
+        title: "궁석궁석",
+        status: " finish",
+        startDate: new Date("2024-03-05"),
+        endDate: new Date("2024-04-07"),
+    };
+
     return (
         <div className="App">
             <BrowserRouter>
@@ -37,8 +46,15 @@ function App() {
                             path="/createProject"
                             element={
                                 <>
-                                    {" "}
-                                    <Header title="프로젝트생성" /> <CreateProject />{" "}
+                                    <Header title="프로젝트생성" /> <CreateProject />
+                                </>
+                            }
+                        />
+                        <Route
+                            path="/board"
+                            element={
+                                <>
+                                    <Header project={project} /> <BoardMainBox />
                                 </>
                             }
                         />
