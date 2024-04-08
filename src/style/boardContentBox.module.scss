@@ -1,11 +1,12 @@
 @import "./theme.scss";
+
 .contentBox {
+    width: 100%;
     background-color: white;
     border-radius: 20px;
-    min-height: 130px;
-    max-height: 180px;
+    min-height: 300px;
     padding: 5px 5px;
-    @include flex-row(start, start);
+    @include flex-column(start, start);
     overflow: scroll;
 }
 
@@ -13,11 +14,11 @@
     height: 200px;
 }
 .nonContent {
+    width: 100%;
     padding: 20px;
     background-color: white;
     border-radius: 20px;
-    min-height: 130px;
-    max-height: 180px;
+    min-height: 300px;
     @include flex-row(start, start);
     overflow: scroll;
 }

@@ -24,7 +24,7 @@ export default function ContentBox(props: any) {
             )}
             {props.myJob &&
                 (props.myJob.length === 0 ? (
-                    <div className={styles.contentBox}>
+                    <div className={styles.nonContent}>
                         <div>작업이 없습니다.</div>
                     </div>
                 ) : (
@@ -34,7 +34,7 @@ export default function ContentBox(props: any) {
                 ))}
             {props.teamData &&
                 (props.teamData.length === 0 ? (
-                    <div className={styles.contentBox}>
+                    <div className={styles.nonContent}>
                         <div>팀 활동내역이 없습니다.</div>
                     </div>
                 ) : (

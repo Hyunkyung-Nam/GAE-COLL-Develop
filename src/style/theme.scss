@@ -1,4 +1,4 @@
-$mobile-min: 330px;
+$mobile-min: 320px;
 $mobile-max: 430px;
 $tablet-max: 1023px;
 $desktop-min: 1024px;
@@ -35,6 +35,13 @@ $add-project-member-modal-height: 200px;
 @mixin flex-row($justify, $alien) {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: $justify;
+    align-items: $alien;
+}
+@mixin flex-row-nowrap($justify, $alien) {
+    display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
     justify-content: $justify;
     align-items: $alien;

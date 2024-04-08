@@ -3,13 +3,19 @@
 .addProjectDiv {
     cursor: pointer;
     @include flex-row(space-between, center);
-    width: 33%;
+    // width: 33%;
     background-color: unset;
     overflow: hidden;
     padding: 5px 5px;
     * {
         background-color: unset;
     }
+}
+.thirtyThree {
+    width: 33%;
+}
+.hundred {
+    width: 100%;
 }
 .addProjectButton {
     border-radius: 50%;

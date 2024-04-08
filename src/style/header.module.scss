@@ -2,10 +2,11 @@
 $user-img-size: 30px;
 
 .header {
+    z-index: 100;
+    min-width: $mobile-min;
+    width: 100%;
     padding: 0 10px;
     position: fixed;
-    width: 100vw;
-    width: 100%;
     @include flex-column(space-between, center);
     min-height: 50px;
     background-color: $green-color;
@@ -37,11 +38,27 @@ $user-img-size: 30px;
     }
 
     .headerSecoundLine {
-        width: 100vw;
+        width: 100%;
         @include flex-row(center, center);
         background-color: $green-color;
         font-size: 20px;
         font-weight: bold;
         padding-bottom: 10px;
+    }
+    .hundred {
+        width: 100%;
+    }
+    .headerProjectLine {
+        width: 100%;
+        @include flex-row(space-between, center);
+        background-color: $green-color;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        > div {
+            width: 50%;
+            height: 100%;
+            text-align: end;
+        }
     }
 }
