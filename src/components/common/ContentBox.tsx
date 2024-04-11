@@ -5,19 +5,18 @@ import BaordContentTable from "../board/BaordContentTable";
 import TableContent from "./TableContent";
 import AddProject from "./AddProject";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function ContentBox(props: any) {
     const navigate = useNavigate();
-    const go = (data: string) => {
-        navigate(data);
-    };
+
     return (
         <>
             {props.projectData && (
                 <div className={styles.contentBox}>
                     <AddProject data="프로젝트 생성" onClick={() => navigate("/createProject")} />
 
-                    {props.projectData.map((value: any) => {
+                    {props.projectData.projectResult.map((value: any) => {
                         return <MiniProfile key={value.title} data={value} />;
                     })}
                 </div>

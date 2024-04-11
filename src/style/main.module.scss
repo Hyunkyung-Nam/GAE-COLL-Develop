@@ -2,6 +2,7 @@
 .mainContent {
     position: relative;
     top: 60px;
+    padding: 10px;
 }
 .mainTopConetent {
     @include flex-column(center, center);
