@@ -7,6 +7,9 @@
     padding: 5px 5px;
     @include flex-row(start, start);
     overflow: scroll;
+    > div {
+        width: 33%;
+    }
 }
 
 .minHeight {
