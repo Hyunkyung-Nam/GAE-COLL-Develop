@@ -1,4 +1,7 @@
 @import "./theme.scss";
+a {
+    text-decoration: none;
+}
 .miniProfileBox,
 .addProjectDiv {
     cursor: pointer;
@@ -7,8 +10,11 @@
     background-color: unset;
     overflow: hidden;
     padding: 5px 5px;
+    text-decoration: none;
+    color: black;
     * {
         background-color: unset;
+        text-decoration: none;
     }
 }
 .thirtyThree {
@@ -42,8 +48,10 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         text-align: left;
+        text-decoration: none;
     }
     :last-child {
         font-size: 12px;
+        text-decoration: none;
     }
 }

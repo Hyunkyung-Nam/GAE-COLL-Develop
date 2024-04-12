@@ -1,4 +1,5 @@
 @import "./theme.scss";
+
 .contentBox {
     background-color: white;
     border-radius: 20px;
@@ -8,6 +9,9 @@
     @include flex-row(start, start);
     overflow: scroll;
     > div {
+        width: 33%;
+    }
+    > a {
         width: 33%;
     }
 }

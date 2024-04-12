@@ -120,7 +120,7 @@ exports.getMyProject = async (req, res) => {
             let id = project_ids[i];
             const getProjectInfotResult = await Project.findOne({
                 where: { id },
-                attributes: ["id", "project_name", "status", "project_img"],
+                attributes: ["id", "project_name", "status", "project_img", "start_date", "end_date"],
             });
 
             projectResult.push(getProjectInfotResult);

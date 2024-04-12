@@ -6,7 +6,26 @@
     width: 100%;
     border-radius: 10px;
     background-color: beige;
+    overflow: hidden;
     > div {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 5px;
+    }
+}
+.boardJobMainOpacity {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 10px;
+    background-color: beige;
+    overflow: hidden;
+    opacity: 0.5;
+    > div {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         padding: 5px;
     }
 }
