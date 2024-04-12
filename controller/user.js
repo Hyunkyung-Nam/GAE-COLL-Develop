@@ -115,8 +115,8 @@ exports.checkUser = async (req, res) => {
         });
 
         if (findUserResult) {
-            const token = jwt.sign({ id: findUserResult.id }, process.env.DEVEL_SECRET, { expiresIn: "24h" });
-            res.json({ success: true, token });
+            //  const token = jwt.sign({ id: findUserResult.id }, process.env.DEVEL_SECRET, { expiresIn: "24h" });
+            res.json({ success: true });
         } else {
             res.json({ success: false });
         }

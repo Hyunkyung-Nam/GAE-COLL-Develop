@@ -4,6 +4,13 @@ import styles from "../../style/header.module.scss";
 import MiniProfile from "./MiniProfile";
 
 export default function Header(props: any) {
+    // const { end_date } = props.project;
+
+    // const endDate = new Date(end_date);
+    // const today = new Date();
+
+    let dDay = 0;
+
     return (
         <div className={styles.header}>
             <div className={styles.headerFirstLine}>
@@ -20,7 +27,15 @@ export default function Header(props: any) {
                         <MiniProfile data={props.project} />
                     </div>
                     <div className={styles.projectDdayBox}>
-                        D - {Math.floor((props.project.endDate - props.project.startDate) / (1000 * 60 * 60 * 24))}
+                        <span style={{ display: "none" }}>
+                            {
+                                (dDay = Math.floor(
+                                    (Number(new Date(props.project.end_date)) - Number(new Date())) /
+                                        (1000 * 60 * 60 * 24)
+                                ))
+                            }
+                        </span>
+                        {dDay > 0 ? <span>D - {dDay}</span> : <span>D + {Math.abs(dDay)}</span>}
                     </div>
                 </div>
             )}
