@@ -3,7 +3,7 @@
 .main {
     position: relative;
     top: 60px + 35.5px + 20px;
-    padding: 10px 30px 10px 40px;
+    padding: 10px 30px 70px 40px; //mobile하단 navigation으로 하단 padding 70px
     // padding: 10px 0 10px 20px;
     @include flex-row-nowrap(start, start);
     overflow: scroll;

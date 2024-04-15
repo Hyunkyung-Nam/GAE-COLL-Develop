@@ -1,0 +1,93 @@
+@import "./theme.scss";
+
+.calenerMain {
+    @include flex-column(center, start);
+    padding: 110px 10px 10px 10px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+.calenderSection {
+    margin-top: 20px;
+    padding: 10px;
+    @include flex-column(center, start);
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+}
+.selectedJobSection {
+    margin-top: 10px;
+}
+
+.calenderTitle {
+    margin-top: 10px;
+    width: 100%;
+    @include flex-row(space-between, center);
+    > div:first-child > span {
+        padding-left: 10px;
+        font-weight: bold;
+    }
+    > div:last-child {
+        @include flex-row(space-between, center);
+        > div {
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: white;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            font-size: 14px;
+            &:first-child {
+                border: 1px solid;
+                margin-right: 5px;
+                padding: 5px 6px 5px 4px;
+            }
+            &:last-child {
+                border: 1px solid;
+                padding: 5px 4px 5px 6px;
+            }
+        }
+    }
+}
+.calenderHeader {
+    margin-top: 10px;
+    width: 100%;
+
+    @include flex-row(start, center);
+    > div {
+        width: calc(100% / 7);
+        text-align: center;
+        font-size: 13px;
+    }
+}
+.calenderBody {
+    margin-top: 10px;
+    width: 100%;
+    @include flex-column(center, start);
+
+    > div {
+        @include flex-row(start, center);
+        border-top: 0.3px solid rgb(230, 227, 227);
+        width: 100%;
+        > div {
+            width: calc(100% / 7);
+            font-size: 13px;
+            text-align: center;
+            min-height: 60px;
+            padding: 2px;
+            cursor: pointer;
+        }
+    }
+}
+.disalbed {
+    background-color: unset;
+}
+.selected {
+    background-color: yellow;
+}
+
+.notValid {
+    color: gray;
+}
+.valid {
+    color: black;
+}
