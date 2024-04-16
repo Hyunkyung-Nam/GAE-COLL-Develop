@@ -4,7 +4,7 @@ const cors = require("cors");
 const path = require("path");
 const socketIo = require("socket.io");
 require("dotenv").config();
-const db = require("./../models");
+const db = require("./models");
 
 const app = express();
 const PORT = 8080;
@@ -17,9 +17,6 @@ const io = socketIo(server);
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "./build")));
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./build/index.html"));
-});
 
 //라우터
 
@@ -42,3 +39,6 @@ db.sequelize
     .catch((e) => {
         console.log(`DB생성시오류 : `, e);
     });
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./build/index.html"));
+});
