@@ -16,6 +16,11 @@
 }
 .selectedJobSection {
     margin-top: 10px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 10px;
+    width: 100%;
+    font-size: 13px;
 }
 
 .calenderTitle {
@@ -90,4 +95,9 @@
 }
 .valid {
     color: black;
+}
+.CalenderboardContenct {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

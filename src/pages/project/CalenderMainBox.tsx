@@ -74,16 +74,24 @@ export default function CalenderMainBox() {
     const onDateClick = (day: Date) => {
         setSelectedDate(day);
     };
-    const setBoard = (date: string): object[] => {
+    const setBoard = (date: string): any[] => {
         const datas: object[] = [];
-        const aaa = job.filter((e) => {
+        const matchData = job.filter((e) => {
             if (e.deadline.slice(8, 10) === date) {
                 return e;
             }
         });
-        aaa.map((e) => datas.push(<div>{e.title}</div>));
+        matchData.map((e) => datas.push(<div className={styles.CalenderboardContenct}>{e.title}</div>));
         console.log(typeof datas[0], datas[0]);
         return datas;
+    };
+    const setSelectedBoard = (): any[] => {
+        const matchData = job.filter((e) => {
+            if (e.deadline.slice(8, 10) === selectedDate.getDate().toString()) {
+                return e;
+            }
+        });
+        return matchData;
     };
     return (
         <div className={styles.calenerMain}>
@@ -97,7 +105,20 @@ export default function CalenderMainBox() {
                     setBoard={setBoard}
                 />
             </div>
-            <div className={styles.selectedJobSection}>{job?.length}</div>
+            <div className={styles.selectedJobSection}>
+                {selectedDate && (
+                    <div style={{ textAlign: "start", fontSize: "14px" }}>{`${
+                        selectedDate.getMonth() + 1
+                    }월 ${selectedDate.getDate()}일 마감`}</div>
+                )}
+
+                {setSelectedBoard().length === 0 && (
+                    <div style={{ textAlign: "center", opacity: "0.5", fontSize: "12px" }}>작업없음</div>
+                )}
+                {setSelectedBoard().map((e) => {
+                    return <div style={{ marginTop: "5px" }}>* {e.title}</div>;
+                })}
+            </div>
         </div>
     );
 }
@@ -143,7 +164,7 @@ const CalenderBody = ({
     currentMonth: Date;
     selectedDate: Date;
     onDateClick: (day: Date) => void;
-    setBoard: (date: string) => object[];
+    setBoard: (date: string) => any[];
 }) => {
     const monthStart = startOfMonth(currentMonth);
     const monthEnd = endOfMonth(monthStart);
