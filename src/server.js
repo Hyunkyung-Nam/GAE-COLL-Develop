@@ -1,6 +1,7 @@
 const http = require("http");
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const socketIo = require("socket.io");
 require("dotenv").config();
 const db = require("./../models");
@@ -13,15 +14,14 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 //미들웨어 설정
-app.set("view engine", "ejs");
-app.use("/public", express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname, "./build")));
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./build/index.html"));
+});
 
 //라우터
-app.get("/api", (req, res) => {
-    res.send({ message: "hello" });
-});
 
 const userRouter = require("../routes/user");
 app.use("/api/user", userRouter);
