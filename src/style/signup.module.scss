@@ -1,0 +1,18 @@
+@import "./theme.scss";
+canvas {
+    display: none;
+}
+.singup-background {
+    width: 85%;
+}
+.signup-body form {
+    width: 100%;
+    @include flex-column(center, baseline);
+}
+.signup-body form > * {
+    width: 100%;
+}
+.signup-body form > button {
+    margin: 10px 20px 0;
+    width: calc(100% - 40px);
+}

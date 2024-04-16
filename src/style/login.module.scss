@@ -1,0 +1,83 @@
+@import "./theme.scss";
+body {
+    background-color: $main-color;
+}
+
+main {
+    @include flex-column(center, center);
+    height: 100vh;
+    overflow-y: hidden;
+}
+.emailLogin {
+    width: 100%;
+    @include flex-column(center, center);
+    margin-bottom: 50px;
+}
+.disable {
+    cursor: none;
+    color: $gray-color;
+    opacity: 0.8;
+}
+.socialLogin {
+    @include flex-row(space-evenly, center);
+
+    div {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: solid 2px gray;
+    }
+    img {
+        border-radius: 50%;
+    }
+    :first-child {
+        margin-right: 20px;
+    }
+}
+
+@mixin desktop {
+}
+@include tablet {
+}
+
+@include mobile {
+    .appTitle {
+        font-weight: bold;
+        margin-bottom: 50px;
+        font-size: 30px;
+        text-align: center;
+    }
+    label {
+        font-weight: bold;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    .appTitleLarge {
+        font-size: 40px;
+    }
+    .emailLogin > * {
+        width: 200px;
+    }
+    .findPw {
+        margin-top: 10px;
+        font-weight: bold;
+        color: $gray-color;
+        font-size: 13px;
+        text-decoration: underline;
+    }
+    .mainTitle {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .findEmail > :last-child {
+        margin-top: 10px;
+    }
+
+    .findEmail {
+        button {
+            margin-left: 10px;
+        }
+    }
+}

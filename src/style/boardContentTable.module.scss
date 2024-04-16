@@ -1,0 +1,73 @@
+@import "./theme.scss";
+
+.boardContentTableBox {
+    width: 100% !important;
+    height: 100%;
+    padding: 5px;
+    @include flex-row(center, start);
+    table {
+        table-layout: fixed;
+        border-spacing: 0.5px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        th {
+            padding: 5px;
+            font-size: 14px;
+        }
+        td {
+            font-size: 13px;
+            text-overflow: ellipsis;
+            padding: 5px;
+            text-align: left;
+            overflow: hidden;
+        }
+    }
+}
+.teamLogTable {
+    width: 100% !important;
+    height: 100%;
+    padding: 5px;
+    @include flex-row(center, start);
+    table {
+        table-layout: fixed;
+        border-spacing: 0.5px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        tr:first-child {
+            width: 30%;
+        }
+        td {
+            padding: 5px;
+            font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+.td {
+    height: 25px;
+    div {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include flex-row-nowrap(start, center);
+
+        img {
+            width: calc(25px - 10px - 2px);
+            height: calc(25px - 10px - 2px);
+            flex-shrink: 0;
+            margin-right: 2px;
+        }
+        span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

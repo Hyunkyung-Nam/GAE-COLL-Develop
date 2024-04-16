@@ -1,0 +1,64 @@
+@import "./theme.scss";
+$user-img-size: 30px;
+
+.header {
+    z-index: 100;
+    min-width: $mobile-min;
+    width: 100%;
+    padding: 0 10px;
+    position: fixed;
+    @include flex-column(space-between, center);
+    min-height: 50px;
+    background-color: $green-color;
+
+    > .headerFirstLine {
+        position: relative;
+        width: 100%;
+        @include flex-row(space-between, center);
+        > div {
+            width: calc(100% / 3);
+            height: 100%;
+            text-align: center;
+
+            line-height: 50px;
+        }
+
+        > .imgBox {
+            @include flex-row(end, center);
+            height: 100%;
+            > img {
+                width: $user-img-size;
+                height: $user-img-size;
+                border-radius: 50%;
+                border: 0.5px solid;
+                padding: 2px;
+                background-color: white;
+            }
+        }
+    }
+
+    .headerSecoundLine {
+        width: 100%;
+        @include flex-row(center, center);
+        background-color: $green-color;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+    .hundred {
+        width: 100%;
+    }
+    .headerProjectLine {
+        width: 100%;
+        @include flex-row(space-between, center);
+        background-color: $green-color;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        > div {
+            width: 50%;
+            height: 100%;
+            text-align: end;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import "./theme.scss";
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    @include flex-row-nowrap(start, center);
+    height: 50px;
+    background-color: $green-color;
+    > a {
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        width: 20%;
+    }
+}

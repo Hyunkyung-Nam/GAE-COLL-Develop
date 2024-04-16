@@ -1,0 +1,57 @@
+@import "./theme.scss";
+a {
+    text-decoration: none;
+}
+.miniProfileBox,
+.addProjectDiv {
+    cursor: pointer;
+    @include flex-row(space-between, center);
+    // width: 33%;
+    background-color: unset;
+    overflow: hidden;
+    padding: 5px 5px;
+    text-decoration: none;
+    color: black;
+    * {
+        background-color: unset;
+        text-decoration: none;
+    }
+}
+.thirtyThree {
+    width: 33%;
+}
+.hundred {
+    width: 100%;
+}
+.addProjectButton {
+    border-radius: 50%;
+    width: $mobile-img-size;
+    height: $mobile-img-size;
+    border: 0.5px solid;
+    text-align: center;
+    line-height: $mobile-img-size;
+    font-weight: bold;
+}
+.miniProfileImg {
+    width: $mobile-img-size;
+    height: $mobile-img-size;
+}
+.addProjectContent {
+    width: calc(100% - $mobile-img-size - 10px);
+    font-size: 10px;
+    font-weight: bold;
+}
+.miniProfileContent {
+    width: calc(100% - $mobile-img-size - 10px);
+    > div {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: left;
+        text-decoration: none;
+    }
+    :last-child {
+        font-size: 12px;
+        text-decoration: none;
+    }
+}

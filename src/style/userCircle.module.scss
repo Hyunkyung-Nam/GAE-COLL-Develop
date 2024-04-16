@@ -1,0 +1,15 @@
+@import "./theme.scss";
+
+.userCircleBox {
+    width: $mobile-img-size;
+    height: $mobile-img-size;
+    margin: 5px;
+    border-radius: 50%;
+    border: 0.5px solid;
+    > img {
+        width: 100%;
+        height: 100%;
+        padding: 3px;
+        border-radius: 50%;
+    }
+}
