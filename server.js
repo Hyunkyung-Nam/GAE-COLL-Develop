@@ -16,7 +16,7 @@ const io = socketIo(server);
 //미들웨어 설정
 app.use(express.json());
 app.use(cors());
-// app.use(express.static(path.join(__dirname, "./build")));
+app.use(express.static(path.join(__dirname, "./build")));
 
 //라우터
 
@@ -39,6 +39,6 @@ db.sequelize
     .catch((e) => {
         console.log(`DB생성시오류 : `, e);
     });
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "./build/index.html"));
-// });
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./build/index.html"));
+});
