@@ -101,3 +101,20 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+@include desktop {
+    .calenderSection {
+        min-height: 400px;
+    }
+    .selectedJobSection {
+        min-height: 100px;
+    }
+}
+@include tablet {
+    .calenderSection {
+        min-height: 400px;
+    }
+    .selectedJobSection {
+        min-height: 100px;
+    }
+}

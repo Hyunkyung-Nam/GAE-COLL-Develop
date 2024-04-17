@@ -93,7 +93,7 @@ function App() {
                             }
                         />
                     </Route>
-                    <Route path="/*">404에러</Route>
+                    <Route path="*">404에러</Route>
                 </Routes>
             </BrowserRouter>
         </div>
