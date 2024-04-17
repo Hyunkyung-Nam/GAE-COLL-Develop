@@ -196,7 +196,9 @@ const CalenderBody = ({
                 >
                     <span className={format(currentMonth, "M") !== format(day, "M") ? styles.notValid : ""}>
                         {formatteDate}
-                        {setBoard(formatteDate).length !== 0 ? setBoard(formatteDate) : ""}
+                        {isSameMonth(day, monthStart) && setBoard(formatteDate).length !== 0
+                            ? setBoard(formatteDate)
+                            : ""}
                     </span>
                 </div>
             );
