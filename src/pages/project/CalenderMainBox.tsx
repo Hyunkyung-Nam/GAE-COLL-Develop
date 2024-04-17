@@ -77,7 +77,7 @@ export default function CalenderMainBox() {
     const setBoard = (date: string): any[] => {
         const datas: object[] = [];
         const matchData = job.filter((e) => {
-            if (e.deadline.slice(8, 10) === date) {
+            if (Number(e.deadline.slice(8, 10)) === Number(date)) {
                 return e;
             }
         });
