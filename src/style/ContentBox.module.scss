@@ -28,3 +28,37 @@
     @include flex-row(start, start);
     overflow: scroll;
 }
+@include desktop {
+    .contentBox {
+        background-color: white;
+        border-radius: 20px;
+        min-height: 130px;
+        max-height: 300px;
+        padding: 5px 5px;
+        @include flex-row(start, start);
+        overflow: scroll;
+        > div {
+            width: 33%;
+        }
+        > a {
+            width: 33%;
+        }
+    }
+}
+@include tablet {
+    .contentBox {
+        background-color: white;
+        border-radius: 20px;
+        min-height: 130px;
+        max-height: 250px;
+        padding: 5px 5px;
+        @include flex-row(start, start);
+        overflow: scroll;
+        > div {
+            width: 33%;
+        }
+        > a {
+            width: 33%;
+        }
+    }
+}
